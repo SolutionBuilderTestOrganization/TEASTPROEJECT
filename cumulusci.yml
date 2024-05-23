@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: TEASTPROEJECT
+    package:
+        name: TEASTPROEJECT
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/TEASTPROEJECT/tests
+            options:
+                outputdir: robot/TEASTPROEJECT/results
+
+    robot_testdoc:
+        options:
+            path: robot/TEASTPROEJECT/tests
+            output: robot/TEASTPROEJECT/doc/TEASTPROEJECT_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
